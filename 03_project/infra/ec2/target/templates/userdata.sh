@@ -17,10 +17,10 @@ sudo ./install auto
 sudo service codedeploy-agent status
 rm -rf ./install
 
-cat >/etc/init.d/codedeploy-start.sh <<EOL
+cat >/etc/init.d/codedeploy-start.sh <<EOF
 #!/bin/bash
 sudo service codedeploy-agent restart
-EOL
+EOF
 sudo chmod +x /etc/init.d/codedeploy-start.sh
 
 # docker 설치

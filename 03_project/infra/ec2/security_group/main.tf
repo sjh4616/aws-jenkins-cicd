@@ -1,5 +1,5 @@
 resource "aws_security_group" "ssh" {
-  name   = "aws00-instance-ssh"
+  name   = "sung-instance-ssh"
   vpc_id = data.terraform_remote_state.vpc.outputs.vpc_id
 
   ingress {
@@ -15,16 +15,16 @@ resource "aws_security_group" "ssh" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags = {
-    Name = "aws00-ssh"
+    Name = "sung-instance-ssh"
   }
 }
-resource "aws_security_group" "app_http" {
-  name   = "aws00-app-http"
+resource "aws_security_group" "target_http" {
+  name   = "sung-target-http"
   vpc_id = data.terraform_remote_state.vpc.outputs.vpc_id
 
   ingress {
-    from_port   = var.app_port
-    to_port     = var.app_port
+    from_port   = var.target_port
+    to_port     = var.target_port
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -35,11 +35,11 @@ resource "aws_security_group" "app_http" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags = {
-    Name = "aws00-app-http"
+    Name = "sung-target-http"
   }
 }
 resource "aws_security_group" "http" {
-  name   = "aws00-instance-http"
+  name   = "sung-instance-http"
   vpc_id = data.terraform_remote_state.vpc.outputs.vpc_id
 
   ingress {
@@ -55,11 +55,11 @@ resource "aws_security_group" "http" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags = {
-    Name = "aws00-http"
+    Name = "sung-instance-http"
   }
 }
 resource "aws_security_group" "https" {
-  name   = "aws00-instance-https"
+  name   = "sung-instance-https"
   vpc_id = data.terraform_remote_state.vpc.outputs.vpc_id
 
   ingress {
@@ -75,6 +75,6 @@ resource "aws_security_group" "https" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags = {
-    Name = "aws00-https"
+    Name = "sung-instance-https"
   }
 }

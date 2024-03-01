@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
-    bucket         = "aws00-terraform-state"
+    bucket         = "sung-terraform-state"
     region         = "ap-northeast-2"
     key            = "infra/vpc/terraform.tfstate"
-    dynamodb_table = "aws00-terraform-looks"
+    dynamodb_table = "sung-terraform-looks"
     encrypt        = true
   }
 }
