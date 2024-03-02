@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt update -y
-sudo apt install -y docker.io openjdk-17-jdk git ruby wget unzip
+sudo apt install -y docker.io openjdk-17-jdk git ruby wget zip unzip
 
 cd /home/ubuntu
 
